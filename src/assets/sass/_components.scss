@@ -1,0 +1,196 @@
+.sidebar {
+    background-color: rgba($color-primary-orange, 0.85);
+    color: #fff;
+    z-index: 10;
+    &__block-1 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        @include respond(phone) {
+            font-size: 1.8rem; //650
+        }
+        & span {
+            font-size: 9.5rem;
+            font-weight: 700;
+            @include respond(phone) {
+                font-size: 7rem; //650
+            }
+        }
+    }
+    &__block-2 {
+        font-size: 2rem;
+        padding-top: 5rem;
+        margin: 2rem;
+        line-height: 2.2rem;
+        border-top: 2rem solid #fff;
+    }
+    &__block-3 {
+        font-size: 3.5rem;
+        font-weight: 500;
+        margin: 2rem;
+        padding-top: 5rem;
+        line-height: 4.5rem;
+        text-transform: uppercase;
+        border-top: 2rem solid #fff;
+        @include respond(phone) {
+            font-size: 2.5rem; //650
+            line-height: 3rem;
+        }
+    }
+}
+
+.header {
+    background-color: #fff;
+    &__content {
+        color: $color-primary-orange;
+        font-size: 5rem;
+        border-right: $padding-right-big solid $color-primary-orange;
+        text-align: end;
+        padding-right: 2rem;
+        text-transform: uppercase;
+        @include respond(phone) {
+            font-size: 4rem; //650
+            border-right: $padding-right-medium solid $color-primary-orange;
+        }
+        @include respond(small-phone) {
+            border-right: $padding-right-small solid $color-primary-orange; //400
+        }
+    }
+}
+
+.block-1 {
+    background-color: $color-primary-dark;
+    color: #fff;
+    text-align: end;
+    padding-right: $padding-right-big;
+    @include respond(phone) {
+        padding-right: $padding-right-medium; //650
+    }
+    @include respond(small-phone) {
+        padding-right: $padding-right-small; //400
+    }
+    &__title {
+        padding-top: 8rem;
+        font-size: 5rem;
+        line-height: 6.5rem;
+        text-transform: uppercase;
+        @include respond(small-phone) {
+            padding-top: 10rem; //400
+        }
+        & span {
+            font-size: 10rem;
+            color: $color-primary-orange;
+            font-weight: 600;
+        }
+    }
+    &__text {
+        width: 60%;
+        margin-left: 40%;
+        font-size: 2rem;
+        @include respond(small-phone) {
+            width: 85%;
+            margin-left: 15%; //400
+        }
+    }
+}
+
+.block-2 {
+    background-image: linear-gradient(to right bottom, rgba($color-block-3, 0.8), rgba($color-block-3, 0.8)), url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-color: $color-primary-dark;
+    color: #fff;
+    text-align: end;
+    padding-right: $padding-right-big;
+    @include respond(phone) {
+        padding-right: $padding-right-medium; //650
+    }
+    @include respond(small-phone) {
+        padding-right: $padding-right-small; //400
+    }
+    &__title {
+        padding-top: 8rem;
+        font-size: 10rem;
+        line-height: 11rem;
+        text-transform: uppercase;
+        @include respond(small-phone) {
+            font-size: 8rem; //400
+        }
+    }
+    &__paragraph {
+        &--1,
+        &--2 {
+            width: 60%;
+            margin-left: 40%;
+            font-size: 2.5rem;
+            @include respond(small-phone) {
+                width: 85%;
+                margin-left: 15%; //400
+                font-size: 2.3rem;
+            }
+        }
+        &--2 {
+            color: $color-primary-dark;
+            font-weight: 600;
+        }
+    }
+}
+
+.contacts {
+    background-color: $color-primary-dark;
+    color: #fff;
+    &__web {
+        &__text {
+            color: $color-primary-orange;
+            font-size: 2rem;
+        }
+    }
+    &__img {
+        height: 3.5rem;
+        padding-right: 2rem;
+        @include respond(phone) {
+            height: 2.5rem; //650
+            padding-right: 1.5rem;
+        }
+    }
+    &__text {
+        font-size: 2rem;
+    }
+    &__adress,
+    &__phone,
+    &__email {
+        margin-bottom: 5rem;
+        @include respond(small-phone) {
+            margin-bottom: 0; //400
+        }
+    }
+}
+
+.footer {
+    background-color: $color-footer;
+    padding-right: $padding-right-big;
+    @include respond(phone) {
+        padding-right: $padding-right-medium; //650
+    }
+    @include respond(small-phone) {
+        padding-right: $padding-right-small; //400
+    }
+    &__img {
+        height: 5rem;
+        margin: 0 0 0 6rem;
+        @include respond(phone) {
+            height: 4rem; //650
+        }
+    }
+}
+
+////////// ANIMATION
+.block-1__content,
+.block-2__content,
+.contacts__content {
+    opacity: 0;
+    animation-duration: 3s;
+    &.animated {
+        opacity: 1;
+    }
+}
