@@ -15,7 +15,7 @@ var processors = [
 
 gulp.task('html', function () {
     return gulp.src('src/*.html')
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('docs'))
 });
 
 gulp.task('css', function () {
@@ -23,14 +23,14 @@ gulp.task('css', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(rename('style.css'))
-        .pipe(gulp.dest('build/assets'))
+        .pipe(gulp.dest('docs/assets'))
         .pipe(browserSync.stream())
 });
 
 gulp.task('vendor:css', function () {
     return gulp.src('src/vendor/css/*.css')
         .pipe(concat('vendor.css'))
-        .pipe(gulp.dest('build/assets'));
+        .pipe(gulp.dest('docs/assets'));
 });
 
 gulp.task('js', function (callback) {
@@ -46,7 +46,7 @@ gulp.task('js', function (callback) {
 gulp.task('serve', function () {
     browserSync.init({
         server: {
-            baseDir: "./build"
+            baseDir: "./docs"
         }
     });
 });
@@ -66,11 +66,11 @@ gulp.task('copy', function () {
     return gulp.src([
             'src/**/*.{jpg,png,jpeg,gif,svg,ttf,otf}'
         ])
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('docs'))
 });
 
 gulp.task('clean', function () {
-    return del('build');
+    return del('docs');
 });
 
 gulp.task('build', gulp.parallel('css', 'html', 'js', 'copy', 'vendor:css'));
